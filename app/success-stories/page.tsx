@@ -1,9 +1,33 @@
+import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function SuccessStories() {
+  const stories = [
+    {
+      title: "How We Booked an Over-Qualified Appointment in 2 Hours",
+      url: "https://j-reach.com/how-we-booked-a-over-qualified-appointment-in-2-hours",
+      image: "/placeholder.svg?height=200&width=300",
+    },
+    {
+      title: "How in 63 Minutes I Booked a Meeting Who Showed Up with His Dream Customer",
+      url: "https://j-reach.com/how-in-63-minutes-i-booked-a-meeting-who-showed-up-with-his-dream-customer",
+      image: "/placeholder.svg?height=200&width=300",
+    },
+    {
+      title: "How We Helped Karston Become a Millionaire",
+      url: "https://j-reach.com/how-we-helped-karston-become-a-millionaire",
+      image: "/placeholder.svg?height=200&width=300",
+    },
+    {
+      title: "How We Booked a Client's Dream Customer in 67 Minutes",
+      url: "https://j-reach.com/how-we-booked-a-clients-dream-customer-in-67-minutes",
+      image:  "/placeholder.svg?height=200&width=300",
+    },
+  ]
+
   return (
     <div className="min-h-screen bg-beige-50">
       <header className="bg-white shadow-sm fixed w-full z-10">
@@ -24,7 +48,7 @@ export default function SuccessStories() {
               <Link href="/services" className="text-yellow-800 hover:text-yellow-600 font-medium">Services</Link>
               <Link href="/contact" className="text-yellow-800 hover:text-yellow-600 font-medium">Contact</Link>
               <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-white">
-                <Link href="/get-started">Get Started</Link>
+                <a href="https://calendly.com/j-reach/intro" target="_blank" rel="noopener noreferrer">Get Started</a>
               </Button>
             </nav>
           </div>
@@ -48,83 +72,14 @@ export default function SuccessStories() {
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                {
-                  company: "TechInnovate Solutions",
-                  industry: "AI Sector",
-                  challenge: "Struggling to generate quality leads",
-                  solution: "Partnered with J-Reach for cold outbound lead generation",
-                  result: "300% increase in qualified leads within the first three months",
-                },
-                {
-                  company: "Global Logistics Pro",
-                  industry: "Logistics",
-                  challenge: "Looking to expand into new markets",
-                  solution: "J-Reach developed a comprehensive lead generation campaign",
-                  result: "250% increase in lead volume and improved lead quality",
-                },
-                {
-                  company: "FinTech Pioneers",
-                  industry: "Financial Technology",
-                  challenge: "High customer acquisition costs through traditional channels",
-                  solution: "Implemented J-Reach's targeted cold outbound strategy",
-                  result: "Reduced customer acquisition costs by 40% while doubling new client onboarding",
-                },
-                {
-                  company: "EcoSmart Solutions",
-                  industry: "Green Technology",
-                  challenge: "Difficulty reaching decision-makers in large corporations",
-                  solution: "Utilized J-Reach's personalized outreach techniques",
-                  result: "Secured meetings with C-level executives at 5 Fortune 500 companies within 2 months",
-                },
-              ].map((story, index) => (
+              {stories.map((story, index) => (
                 <Card key={index} className="border-yellow-500 border-2">
-                  <CardHeader>
-                    <CardTitle className="text-yellow-800">{story.company}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="font-semibold mb-2">Industry: {story.industry}</p>
-                    <p className="mb-2"><span className="font-semibold">Challenge:</span> {story.challenge}</p>
-                    <p className="mb-2"><span className="font-semibold">Solution:</span> {story.solution}</p>
-                    <p><span className="font-semibold">Result:</span> {story.result}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="py-20 bg-beige-100">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-semibold text-yellow-800 mb-12 text-center">What Our Clients Say</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                {
-                  quote: "J-Reach transformed our lead generation process. Their expertise in cold outbound strategies has been a game-changer for our business growth.",
-                  author: "Sarah Johnson",
-                  position: "CEO, TechInnovate Solutions",
-                },
-                {
-                  quote: "The results we've seen with J-Reach have far exceeded our expectations. They've opened doors we couldn't have imagined.",
-                  author: "Michael Chen",
-                  position: "Marketing Director, Global Logistics Pro",
-                },
-                {
-                  quote: "J-Reach's approach to lead generation is truly unique. They've helped us reach decision-makers we've been trying to connect with for years.",
-                  author: "Emily Rodriguez",
-                  position: "Sales Manager, FinTech Pioneers",
-                },
-                {
-                  quote: "Working with J-Reach has been a pleasure. Their team is professional, responsive, and most importantly, they deliver results.",
-                  author: "David Thompson",
-                  position: "Founder, EcoSmart Solutions",
-                },
-              ].map((testimonial, index) => (
-                <Card key={index} className="border-yellow-500 border-2">
-                  <CardContent className="pt-6">
-                    <p className="italic mb-4">"{testimonial.quote}"</p>
-                    <p className="font-semibold">{testimonial.author}</p>
-                    <p className="text-sm text-yellow-700">{testimonial.position}</p>
+                  <Image src={story.image} alt={story.title} width={300} height={200} className="w-full h-48 object-cover" />
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold text-yellow-800 mb-4">{story.title}</h3>
+                    <Button className="bg-yellow-500 hover:bg-yellow-600 text-white">
+                      <a href={story.url} target="_blank" rel="noopener noreferrer">Read More</a>
+                    </Button>
                   </CardContent>
                 </Card>
               ))}
@@ -139,7 +94,7 @@ export default function SuccessStories() {
               Join the ranks of businesses that have transformed their growth trajectory with J-Reach's cold outbound mastery.
             </p>
             <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-white">
-              <Link href="/schedule-call">Schedule Your Strategy Call Now</Link>
+              <a href="https://calendly.com/j-reach/intro" target="_blank" rel="noopener noreferrer">Schedule Your Strategy Call Now</a>
             </Button>
           </div>
         </section>
