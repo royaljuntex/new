@@ -92,7 +92,7 @@ export default function JReachLandingPage() {
             </div>
             <nav className="flex items-center space-x-6">
               <Link href="#" className="text-yellow-800 hover:text-yellow-600 font-medium">Home</Link>
-              <Link href="#" className="text-yellow-800 hover:text-yellow-600 font-medium">About</Link>
+              <Link href="/about" className="text-yellow-800 hover:text-yellow-600 font-medium">About</Link>
               <Link href="#" className="text-yellow-800 hover:text-yellow-600 font-medium">Services</Link>
               <Link href="#" className="text-yellow-800 hover:text-yellow-600 font-medium">Contact</Link>
               <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-white">
