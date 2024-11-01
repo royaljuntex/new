@@ -6,7 +6,6 @@ import Image from 'next/image'
 import { CheckCircle, Users, Calendar, PhoneCall, Target, ClipboardCheck, Shield, Zap, TrendingUp } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import SafeComponent from '@/components/SafeComponent'
 
 export default function JReachLandingPage() {
   const currentYear = new Date().getFullYear()
@@ -97,7 +96,7 @@ export default function JReachLandingPage() {
               <Link href="#" className="text-yellow-800 hover:text-yellow-600 font-medium">Services</Link>
               <Link href="#" className="text-yellow-800 hover:text-yellow-600 font-medium">Contact</Link>
               <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-white">
-                <Link href="/get-started">Get Started</Link>
+                <a href="https://calendly.com/j-reach/intro" target="_blank" rel="noopener noreferrer">Get Started</a>
               </Button>
             </nav>
           </div>
@@ -115,7 +114,7 @@ export default function JReachLandingPage() {
                 Unlock a steady stream of high-quality leads without the risks of paid ads or reputation damage
               </p>
               <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-white">
-                <Link href="/our-secret-weapon">Discover Our Secret Weapon</Link>
+                <a href="https://calendly.com/j-reach/intro" target="_blank" rel="noopener noreferrer">Discover Our Secret Weapon</a>
               </Button>
             </div>
           </div>
@@ -130,7 +129,7 @@ export default function JReachLandingPage() {
                   src="https://www.loom.com/embed/c1d20d06bce544e39b423a57a8a994a0"
                   frameBorder="0"
                   allowFullScreen
-                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                  style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
                 ></iframe>
               </div>
             </div>
@@ -197,15 +196,8 @@ export default function JReachLandingPage() {
               Join the ranks of successful businesses that have transformed their growth trajectory with J-Reach's cold outbound mastery.
             </p>
             <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-white">
-              <Link href="/schedule-call">Schedule Your Strategy Call Now</Link>
+              <a href="https://calendly.com/j-reach/intro" target="_blank" rel="noopener noreferrer">Schedule Your Strategy Call Now</a>
             </Button>
-          </div>
-        </section>
-
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-semibold text-yellow-800 mb-8 text-center">Safe Component Demo</h2>
-            <SafeComponent />
           </div>
         </section>
       </main>
