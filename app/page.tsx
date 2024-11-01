@@ -94,7 +94,7 @@ export default function JReachLandingPage() {
             <nav className="flex items-center space-x-6">
               <Link href="/" className="text-yellow-800 hover:text-yellow-600 font-medium">Home</Link>
               <Link href="/about" className="text-yellow-800 hover:text-yellow-600 font-medium">About</Link>
-              <Link href="/terms-of-service/our-services" className="text-yellow-800 hover:text-yellow-600 font-medium">Services</Link>
+              <Link href="/terms-of-service/our-services" className="text-yellow-800 hover:text-yellow-600 font-medium">Our Services</Link>
               <Link href="/contact" className="text-yellow-800 hover:text-yellow-600 font-medium">Contact</Link>
               <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-white">
                 <a href="https://calendly.com/j-reach/intro" target="_blank" rel="noopener noreferrer">Get Started</a>
@@ -126,32 +126,22 @@ export default function JReachLandingPage() {
             <h2 className="text-3xl font-semibold text-yellow-800 mb-8 text-center">How We've Transformed Businesses</h2>
             <div className="max-w-4xl mx-auto">
               <div className="aspect-w-16 aspect-h-9 relative">
-                {!isVideoPlaying && (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Image
-                      src="https://cdn.loom.com/sessions/thumbnails/c1d20d06bce544e39b423a57a8a994a0-with-play.gif"
-                      alt="Video thumbnail"
-                      layout="fill"
-                      objectFit="cover"
-                      className="rounded-lg"
-                    />
-                    <Button
-                      size="lg"
-                      className="absolute bg-yellow-500 hover:bg-yellow-600 text-white"
-                      onClick={() => setIsVideoPlaying(true)}
-                    >
-                      <Play className="mr-2 h-6 w-6" /> Play Video
-                    </Button>
-                  </div>
-                )}
-                {isVideoPlaying && (
-                  <iframe
-                    src="https://www.loom.com/embed/c1d20d06bce544e39b423a57a8a994a0"
-                    frameBorder="0"
-                    allowFullScreen
-                    className="absolute top-0 left-0 w-full h-full rounded-lg"
-                  ></iframe>
-                )}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Image
+                    src="https://cdn.loom.com/sessions/thumbnails/c1d20d06bce544e39b423a57a8a994a0-with-play.gif"
+                    alt="Video thumbnail"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-lg"
+                  />
+                  <Button
+                    size="lg"
+                    className="absolute bg-yellow-500 hover:bg-yellow-600 text-white"
+                    onClick={() => window.open("https://www.loom.com/share/c1d20d06bce544e39b423a57a8a994a0", "_blank")}
+                  >
+                    <Play className="mr-2 h-6 w-6" /> Watch Video
+                  </Button>
+                </div>
               </div>
             </div>
             <div className="mt-8 text-center">
@@ -238,7 +228,7 @@ export default function JReachLandingPage() {
               <ul className="space-y-2 text-sm">
                 <li><Link href="/" className="text-yellow-700 hover:text-yellow-600">Home</Link></li>
                 <li><Link href="/about" className="text-yellow-700 hover:text-yellow-600">About</Link></li>
-                <li><Link href="/terms-of-service/our-services" className="text-yellow-700 hover:text-yellow-600">Services</Link></li>
+                <li><Link href="/terms-of-service/our-services" className="text-yellow-700 hover:text-yellow-600">Our Services</Link></li>
                 <li><Link href="/contact" className="text-yellow-700 hover:text-yellow-600">Contact</Link></li>
               </ul>
             </div>
