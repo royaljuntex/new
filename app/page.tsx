@@ -1,13 +1,14 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { CheckCircle, Users, Calendar, PhoneCall, Target, ClipboardCheck, Shield, Zap, TrendingUp } from "lucide-react"
+import { CheckCircle, Users, Calendar, PhoneCall, Target, ClipboardCheck, Shield, Zap, TrendingUp, Play } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
 export default function JReachLandingPage() {
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
   const currentYear = new Date().getFullYear()
 
   const features = [
@@ -91,10 +92,10 @@ export default function JReachLandingPage() {
               />
             </div>
             <nav className="flex items-center space-x-6">
-              <Link href="#" className="text-yellow-800 hover:text-yellow-600 font-medium">Home</Link>
+              <Link href="/" className="text-yellow-800 hover:text-yellow-600 font-medium">Home</Link>
               <Link href="/about" className="text-yellow-800 hover:text-yellow-600 font-medium">About</Link>
-              <Link href="#" className="text-yellow-800 hover:text-yellow-600 font-medium">Services</Link>
-              <Link href="#" className="text-yellow-800 hover:text-yellow-600 font-medium">Contact</Link>
+              <Link href="/terms-of-service/our-services" className="text-yellow-800 hover:text-yellow-600 font-medium">Services</Link>
+              <Link href="/contact" className="text-yellow-800 hover:text-yellow-600 font-medium">Contact</Link>
               <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-white">
                 <a href="https://calendly.com/j-reach/intro" target="_blank" rel="noopener noreferrer">Get Started</a>
               </Button>
@@ -125,12 +126,32 @@ export default function JReachLandingPage() {
             <h2 className="text-3xl font-semibold text-yellow-800 mb-8 text-center">How We've Transformed Businesses</h2>
             <div className="max-w-4xl mx-auto">
               <div className="aspect-w-16 aspect-h-9 relative">
-                <iframe
-                  src="https://www.loom.com/embed/c1d20d06bce544e39b423a57a8a994a0"
-                  frameBorder="0"
-                  allowFullScreen
-                  style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
-                ></iframe>
+                {!isVideoPlaying && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Image
+                      src="https://cdn.loom.com/sessions/thumbnails/c1d20d06bce544e39b423a57a8a994a0-with-play.gif"
+                      alt="Video thumbnail"
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-lg"
+                    />
+                    <Button
+                      size="lg"
+                      className="absolute bg-yellow-500 hover:bg-yellow-600 text-white"
+                      onClick={() => setIsVideoPlaying(true)}
+                    >
+                      <Play className="mr-2 h-6 w-6" /> Play Video
+                    </Button>
+                  </div>
+                )}
+                {isVideoPlaying && (
+                  <iframe
+                    src="https://www.loom.com/embed/c1d20d06bce544e39b423a57a8a994a0"
+                    frameBorder="0"
+                    allowFullScreen
+                    className="absolute top-0 left-0 w-full h-full rounded-lg"
+                  ></iframe>
+                )}
               </div>
             </div>
             <div className="mt-8 text-center">
@@ -217,7 +238,7 @@ export default function JReachLandingPage() {
               <ul className="space-y-2 text-sm">
                 <li><Link href="/" className="text-yellow-700 hover:text-yellow-600">Home</Link></li>
                 <li><Link href="/about" className="text-yellow-700 hover:text-yellow-600">About</Link></li>
-                <li><Link href="/services" className="text-yellow-700 hover:text-yellow-600">Services</Link></li>
+                <li><Link href="/terms-of-service/our-services" className="text-yellow-700 hover:text-yellow-600">Services</Link></li>
                 <li><Link href="/contact" className="text-yellow-700 hover:text-yellow-600">Contact</Link></li>
               </ul>
             </div>
