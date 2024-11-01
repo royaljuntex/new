@@ -261,13 +261,13 @@ export default function JReachLandingPage() {
               <h3 className="text-lg font-semibold mb-4">Legal</h3>
               <ul className="space-y-2 text-sm">
                 <li><Link href="/privacy-policy" className="text-yellow-700 hover:text-yellow-600">Privacy Policy</Link></li>
-                <li><Link href="/terms-of-service" className="text-yellow-700 hover:text-yellow-600">Terms of Service</Link></li>
+                <li><Link href="/terms-of-service/page" className="text-yellow-700 hover:text-yellow-600">Terms of Service</Link></li>
               </ul>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-yellow-300 text-center">
             <p className="text-sm text-yellow-700">
-              &copy; {currentYear} J-Reach. All rights reserved. | <Link href="/privacy-policy" className="hover:text-yellow-600 ml-2">Privacy Policy</Link> | <Link href="/terms-of-service" className="hover:text-yellow-600 ml-2">Terms of Service</Link>
+              &copy; {currentYear} J-Reach. All rights reserved. | <Link href="/privacy-policy" className="hover:text-yellow-600 ml-2">Privacy Policy</Link> | <Link href="/terms-of-service/page" className="hover:text-yellow-600 ml-2">Terms of Service</Link>
             </p>
           
           </div>
