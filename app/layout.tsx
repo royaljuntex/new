@@ -1,6 +1,7 @@
-import '@/app/globals.css'
+import 'app/globals.css'
 import { Inter } from 'next/font/google'
 import { Metadata } from 'next'
+import Link from 'next/link'; // Import Link component
 
 const inter = Inter({ subsets: ['latin'] })
 
