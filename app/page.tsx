@@ -160,15 +160,19 @@ export default function JReachLandingPage() {
                 </div>
               </div>
             </div>
-            <div className="mt-8 text-center">
-              <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-white">
-                <Link href="/success-stories">See Our Success Stories</Link>
-              </Button>
-            </div>
           </div>
         </section>
 
         <section className="py-20 bg-white">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-semibold text-yellow-800 mb-8">Our Success Stories</h2>
+            <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-white">
+              <Link href="/success-stories">See Our Success Stories</Link>
+            </Button>
+          </div>
+        </section>
+
+        <section className="py-20 bg-beige-100">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-semibold text-yellow-800 mb-8 text-center">Why J-Reach is Your Ultimate Lead Generation Partner</h2>
             <p className="text-lg text-yellow-700 mb-12 text-center max-w-3xl mx-auto">
@@ -192,7 +196,7 @@ export default function JReachLandingPage() {
           </div>
         </section>
 
-        <section className="py-20 bg-beige-100">
+        <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-semibold text-yellow-800 mb-8 text-center">Our Proven Process</h2>
             <p className="text-lg text-yellow-700 mb-12 text-center max-w-3xl mx-auto">
@@ -265,6 +269,7 @@ export default function JReachLandingPage() {
             <p className="text-sm text-yellow-700">
               &copy; {currentYear} J-Reach. All rights reserved. | <Link href="/privacy-policy" className="hover:text-yellow-600 ml-2">Privacy Policy</Link> | <Link href="/terms-of-service" className="hover:text-yellow-600 ml-2">Terms of Service</Link>
             </p>
+          
           </div>
         </div>
       </footer>
